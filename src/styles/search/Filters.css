@@ -1,0 +1,85 @@
+.filters {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  min-width: 200px;
+  height: 100%;
+  background: #f9efe6;
+  align-items: start;
+  justify-content: start;
+  gap: 10px;
+  border-right: 6px double #c59d78;
+}
+
+.filters-header {
+  margin: 10px 0 0 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: #a40000;
+}
+
+.filters-section {
+  margin-left: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.filters hr {
+  margin: 0 0 10px 5px;
+  width: 94%;
+}
+
+.filters input {
+  margin-left: 10px;
+}
+
+.thin-line {
+  border: none;
+  border-top: 1px solid #a5a5a5;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.difficulty-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: start;
+}
+
+.difficulty {
+  padding: 0;
+  margin: 0 0 0 10px;
+}
+
+.difficulty-slider {
+  margin: 0 0 10px 5px;
+  width: 90%;
+  padding: 0;
+}
+
+.divider {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.countries-wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+
+input[type="checkbox"],
+input[type="range"],
+input[type="text"] {
+  accent-color: #a40000;
+}
+
+input[type="range"]::-webkit-slider-thumb,
+input[type="range"]::-moz-range-thumb,
+input[type="range"]::-ms-thumb,
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #a40000;
+}
