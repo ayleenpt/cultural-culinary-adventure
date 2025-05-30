@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/cultural-culinary-adventure/static/css/main.246a9d12.css",
-    "main.js": "/cultural-culinary-adventure/static/js/main.a4bc4d80.js",
+    "main.css": "/cultural-culinary-adventure/static/css/main.78064f9f.css",
+    "main.js": "/cultural-culinary-adventure/static/js/main.9a058541.js",
     "static/js/453.ada4eed3.chunk.js": "/cultural-culinary-adventure/static/js/453.ada4eed3.chunk.js",
     "index.html": "/cultural-culinary-adventure/index.html",
-    "main.246a9d12.css.map": "/cultural-culinary-adventure/static/css/main.246a9d12.css.map",
-    "main.a4bc4d80.js.map": "/cultural-culinary-adventure/static/js/main.a4bc4d80.js.map",
+    "main.78064f9f.css.map": "/cultural-culinary-adventure/static/css/main.78064f9f.css.map",
+    "main.9a058541.js.map": "/cultural-culinary-adventure/static/js/main.9a058541.js.map",
     "453.ada4eed3.chunk.js.map": "/cultural-culinary-adventure/static/js/453.ada4eed3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.246a9d12.css",
-    "static/js/main.a4bc4d80.js"
+    "static/css/main.78064f9f.css",
+    "static/js/main.9a058541.js"
   ]
 }
