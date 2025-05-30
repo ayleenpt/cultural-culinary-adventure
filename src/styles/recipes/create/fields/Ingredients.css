@@ -1,3 +1,7 @@
+.ingredients {
+  width: 100%;
+}
+
 .ingredient-row {
   display: flex;
   flex-direction: row;
@@ -13,16 +17,11 @@
 }
 
 .ingredient-name {
-  width: 200px;
+  width: 75%;
   min-width: 200px;
 }
 
 .ingredient-quantity {
-  width: 55px;
-  min-width: 55px;
-}
-
-.ingredient-unit {
   width: 55px;
   min-width: 55px;
 }

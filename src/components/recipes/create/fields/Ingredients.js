@@ -1,6 +1,58 @@
 import '../../../../styles/recipes/create/fields/Ingredients.css'
+import Select from 'react-select';
+
+const options = [
+  { value: '-', label: '-' },
+  { value: 'tsp', label: 'tsp' },
+  { value: 'tbsp', label: 'tsbp' },
+  { value: 'cup', label: 'oz' },
+  { value: 'g', label: 'g' },
+  { value: 'ml', label: 'ml' },
+  { value: 'lb', label: 'lb' },
+  { value: 'kg', label: 'kg' },
+  { value: 'pcs', label: 'pcs' },
+  { value: 'pinch', label: 'pinch' }
+];
 
 function Ingredients ({ ingredients, setIngredients }) {
+
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      backgroundColor: state.isFocused ? '#a40000' : 'white',
+      color: state.isFocused ? 'white' : 'black',
+    }),
+    control: (provided) => ({
+      ...provided,
+      minHeight: '29px',
+      height: '29px',
+      minWidth: '85px',
+      width: '85px',
+      fontSize: '14px',
+      borderColor: '#ccc',
+      boxShadow: 'none',
+      borderRadius: '7px',
+      display: 'flex',          // important for layout inside control
+      alignItems: 'center',
+      '&:hover': {
+        boxShadow: '0 0 0 2px #a40000;',
+      },
+    }),
+    valueContainer: (provided) => ({
+      ...provided,
+      padding: '0 0 10px 0',
+      height: '29px',
+    }),
+    indicatorsContainer: (provided) => ({
+      ...provided,
+      height: '29px',
+    }),
+    dropdownIndicator: (provided) => ({
+      ...provided,
+      padding: '4px',
+    }),
+  };
+
   return (
     <div className="ingredients">
       {ingredients.map((ingredient, index) => (
@@ -40,27 +92,18 @@ function Ingredients ({ ingredients, setIngredients }) {
             />
           </div>
 
-          <div className="ingredient-unit">
-            <select
-              value={ingredient.unit}
-              onChange={(e) => {
-                const newIngredients = [...ingredients];
-                newIngredients[index].unit = e.target.value;
-                setIngredients(newIngredients);
-              }}
-            >
-              <option value="">Unit</option>
-              <option value="tsp">tsp</option>
-              <option value="tbsp">tbsp</option>
-              <option value="cup">cup</option>
-              <option value="oz">oz</option>
-              <option value="g">g</option>
-              <option value="ml">ml</option>
-              <option value="lb">lb</option>
-              <option value="kg">kg</option>
-              <option value="pcs">pcs</option>
-            </select>
-          </div>
+          <Select
+            options={options}
+            value={options.find(opt => opt.value === ingredients[index].unit)}
+            onChange={(selectedOption) => {
+              const newIngredients = [...ingredients];
+              newIngredients[index].unit = selectedOption.value;
+              setIngredients(newIngredients);
+            }}
+            styles={customStyles}
+            isSearchable={false}
+            placeholder="Unit"
+          />
 
           <div className="delete-ingredient-btn">
             {ingredients.length > 1 && (
