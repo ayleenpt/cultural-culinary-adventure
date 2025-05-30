@@ -48,6 +48,7 @@ function Filters() {
       </div>
       <hr className="divider" />
 
+      <div className="filters-section">Cultural Influence</div>
       <div className="countries-wrapper">
         <Countries
           selectedCountries={selectedCountries}
