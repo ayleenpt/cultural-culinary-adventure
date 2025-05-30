@@ -1,0 +1,36 @@
+.ingredient-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.ingredient-row input:focus {
+  outline-color: #a40000;
+}
+
+.ingredient-name {
+  width: 200px;
+  min-width: 200px;
+}
+
+.ingredient-quantity {
+  width: 55px;
+  min-width: 55px;
+}
+
+.ingredient-unit {
+  width: 55px;
+  min-width: 55px;
+}
+
+.delete-ingredient-btn button {
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 3px;
+}

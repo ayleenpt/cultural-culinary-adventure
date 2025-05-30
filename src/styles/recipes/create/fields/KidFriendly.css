@@ -1,0 +1,20 @@
+.kid-friendly-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.kid-friendly,
+.not-kid-friendly {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.kid-friendly-group input[type="radio"] {
+  accent-color: #a40000;
+}
