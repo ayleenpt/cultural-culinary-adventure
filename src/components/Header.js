@@ -1,7 +1,12 @@
 import '../styles/Header.css';
 import Logo from '../assets/logo.png';
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+  const navigate = useNavigate();
+  const handleLogoClick = () => { navigate('/'); };
+  const handleCreateRecipeClick = () => { navigate('/create-recipe'); };
+
   return (
     <div className="header">
       <div className="header-left">
@@ -9,6 +14,7 @@ function Header() {
           src={Logo}
           alt="Logo"
           className="logo header-img"
+          onClick={handleLogoClick}
         />
       </div>
 
@@ -18,7 +24,10 @@ function Header() {
         >
           My Recipes
         </h1>
-        <i className="header-icon fa-solid fa-circle-plus"></i>
+        <i
+          className="header-icon fa-solid fa-circle-plus"
+          onClick={handleCreateRecipeClick}>
+        </i>
         <i className="profile-icon fa-solid fa-circle-user"></i>
       </div>
     </div>
