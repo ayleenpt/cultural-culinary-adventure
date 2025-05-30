@@ -1,0 +1,8 @@
+.description textarea {
+  border: 1.5px solid #ccc;
+  outline: none;
+}
+
+.description textarea:focus {
+  box-shadow: 0 0 0 2px #a40000, inset 0 0 0 0.3px rgba(0, 0, 0, 0.1);
+}
