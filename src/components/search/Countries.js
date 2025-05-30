@@ -3,10 +3,9 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 import countries from 'world-countries';
 import '../../styles/search/Countries.css';
 
-export default function Countries() {
+export default function Countries({ selectedCountries, setSelectedCountries }) {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState('');
-  const [selectedCountries, setSelectedCountries] = useState([]);
 
   const toggleVisibility = () => setIsOpen(!isOpen);
 
@@ -68,7 +67,7 @@ export default function Countries() {
                   onChange={() => handleCheckboxChange(country.cca3)}
                   id={country.cca3}
                 />
-                <label htmlFor={country.cca3}>{country.name.common}</label>
+                <label className="country-label" htmlFor={country.cca3}>{country.name.common}</label>
               </div>
             ))}
           </div>

@@ -30,10 +30,9 @@ const usStates = [
   { code: 'WI', name: 'Wisconsin' }, { code: 'WY', name: 'Wyoming' },
 ];
 
-export default function States() {
+export default function States({ selectedStates, setSelectedStates }) {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState('');
-  const [selectedStates, setSelectedStates] = useState([]);
 
   const toggleVisibility = () => setIsOpen(!isOpen);
 
@@ -94,7 +93,7 @@ export default function States() {
                   onChange={() => handleCheckboxChange(state.code)}
                   id={state.code}
                 />
-                <label htmlFor={state.code}>{state.name}</label>
+                <label className="country-label" htmlFor={state.code}>{state.name}</label>
               </div>
             ))}
           </div>

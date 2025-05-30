@@ -1,5 +1,7 @@
 import '../../styles/recipes/CreateRecipe.css';
 import Header from '../Header';
+import Countries from '../search/Countries';
+import States from '../search/States';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -9,10 +11,12 @@ function CreateRecipe() {
   const [recipeDescription, setRecipeDescription] = useState('');
   const [cookingTime, setCookingTime] = useState('');
   const [difficulty, setDifficulty] = useState('');
-  const [kidFriendly, setKidFriendly] = useState('');
   const [glutenFree, setGlutenFree] = useState('');
   const [vegetarian, setVegetarian] = useState('');
   const [vegan, setVegan] = useState('');
+  const [kidFriendly, setKidFriendly] = useState('');
+  const [selectedCountries, setSelectedCountries] = useState([]);
+  const [selectedStates, setSelectedStates] = useState([]);
   const [image, setImage] = useState(null);
   const [steps, setSteps] = useState([""]);
   const cleanedSteps = steps.filter(step => step.trim() !== "");
@@ -24,9 +28,27 @@ function CreateRecipe() {
     setImage(file);
   };
 
-  const handleSubmit = () => {
-    /** post to DB */
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const recipeData = {
+      title: recipeTitle,
+      shortName: recipeShortName,
+      description: recipeDescription,
+      cookingTime,
+      difficulty,
+      vegan,
+      vegetarian,
+      glutenFree,
+      kidFriendly,
+      countries: selectedCountries,
+      states: selectedStates,
+      steps: cleanedSteps,
+      image
+    };
+
+    // TODO: Send recipeData to backend
+  };
 
   return (
     <div className="create-recipe">
@@ -171,6 +193,22 @@ function CreateRecipe() {
                 />
                 <label htmlFor="kid-friendly-no">No</label>
               </div>
+            </div>
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="cultural-influence">Cultural Influence</label>
+            <div className="recipe-influence">
+              <Countries
+                selectedCountries={selectedCountries}
+                setSelectedCountries={setSelectedCountries}
+              />
+              {selectedCountries.includes("USA") && (
+                <States
+                  selectedStates={selectedStates}
+                  setSelectedStates={setSelectedStates}
+                />
+              )}
             </div>
           </div>
 

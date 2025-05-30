@@ -5,6 +5,8 @@ import States from './States';
 
 function Filters() {
   const [difficulty, setDifficulty] = useState(1);
+  const [selectedCountries, setSelectedCountries] = useState([]);
+  const [selectedStates, setSelectedStates] = useState([]);
 
   const handleSliderChange = (event) => {
     setDifficulty(event.target.value);
@@ -47,8 +49,16 @@ function Filters() {
       <hr className="divider" />
 
       <div className="countries-wrapper">
-        <Countries />
-        <States />
+        <Countries
+          selectedCountries={selectedCountries}
+          setSelectedCountries={setSelectedCountries}
+        />
+        {selectedCountries.includes("USA") && (
+          <States
+            selectedStates={selectedStates}
+            setSelectedStates={setSelectedStates}
+          />
+        )}
       </div>
     </div>
   );
