@@ -1,3 +1,5 @@
+import '../../../../styles/recipes/create/fields/Description.css';
+
 function Description({description, setDescription}) {
   return (
     <div className="description" style={{width: '100%', margin: '0'}}>
